@@ -154,6 +154,8 @@ const IFrameHelper = {
         Cookies.set('cw_conversation', message.config.authToken);
         IFrameHelper.sendMessage('config-set', {});
         IFrameHelper.onLoad(message.config.channelConfig);
+      } else if (message.event === 'set_auth_token') {
+        Cookies.set('cw_conversation', message.authToken);
       }
     };
   },
